@@ -13,6 +13,7 @@ links:
             15: 1.20.0 - 1.20.1
             18: 1.20.2
             26: 1.20.3 - 1.20.4
+            48: 1.21 - 1.21.1
         href: https://minecraft.wiki/w/Pack_format
         type: integer
         min: 4

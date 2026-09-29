@@ -54,3 +54,7 @@ $: 156
   - origin_layers
   - loot_tables
   - item_modifiers
+  48:
+  - loot_tables
+  - predicates
+  - advancements
