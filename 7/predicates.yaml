@@ -502,7 +502,7 @@ links:
                                     props:
                                         type:
                                             enum: [fixed, context]
-                                            props:
+                                            more:
                                                 string-fixed:
                                                     name:
                                                         desc: A UUID or playername
@@ -554,7 +554,7 @@ links:
                                     props:
                                         type:
                                             enum: [fixed, context]
-                                            props:
+                                            more:
                                                 string-fixed:
                                                     name:
                                                         desc: A UUID or playername
