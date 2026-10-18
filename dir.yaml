@@ -58,3 +58,6 @@ $: 156
   - loot_tables
   - predicates
   - advancements
+  - powers
+  - origins
+  - origin_layers
