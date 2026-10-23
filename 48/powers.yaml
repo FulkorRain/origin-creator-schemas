@@ -4873,6 +4873,61 @@ links:
             vals:
                 link: hud_render_item
 
+    hud_sprite:
+        type: string
+        allow: '*a-z0-9_#\/:.-'
+        helper:
+            kind: sprites
+            title: Resource bar sheets
+            tab: sheet
+            sheets: &hud_sheets
+              - title: Apace (default)
+                sprite: origins:textures/gui/resource_bar.png
+                image: /i/hud/apace.png
+                bars: 9
+                icons: [1,1,1,1,1,1,1,1,1]
+                default: true
+              - title: Huang 01
+                sprite: origins:textures/gui/community/huang/resource_bar_01.png
+                image: /i/hud/huang_01.png
+                bars: 25
+                icons: [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
+              - title: Huang 02
+                sprite: origins:textures/gui/community/huang/resource_bar_02.png
+                image: /i/hud/huang_02.png
+                bars: 21
+                icons: [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
+              - title: SpiderKolo 01
+                sprite: origins:textures/gui/community/spiderkolo/resource_bar_01.png
+                image: /i/hud/spiderkolo_01.png
+                bars: 25
+                icons: [1,1,2,2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
+              - title: SpiderKolo 02
+                sprite: origins:textures/gui/community/spiderkolo/resource_bar_02.png
+                image: /i/hud/spiderkolo_02.png
+                bars: 25
+                icons: [1,1,2,1,1,1,1,1,3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
+              - title: SpiderKolo 03
+                sprite: origins:textures/gui/community/spiderkolo/resource_bar_03.png
+                image: /i/hud/spiderkolo_03.png
+                bars: 25
+                icons: [13,1,2,2,2,1,2,2,1,4,1,1,1,3,2,1,2,2,1,1,1,1,1,1,1]
+    hud_bar_index:
+        type: integer
+        min: 0
+        helper:
+            kind: sprites
+            title: Resource bars
+            tab: bar
+            sheets: *hud_sheets
+    hud_icon_index:
+        type: integer
+        min: 0
+        helper:
+            kind: sprites
+            title: Resource bar icons
+            tab: icon
+            sheets: *hud_sheets
     hud_render_item:
         desc: An Object used to define how a resource or cooldown bar should be rendered.
         href: https://origins.readthedocs.io/en/latest/types/data_types/hud_render/
@@ -4885,16 +4940,13 @@ links:
             sprite_location:
                 desc: The path to the file in the assets which contains what the bar looks like. See the List of resource bar files for a list of files included by default in the mod. Defaults to "origins:textures/gui/resource_bar.png".
                 href: https://origins.readthedocs.io/en/latest/misc/extras/sprites/
-                type: string
-                allow: '*a-z0-9_#\/:.-'
+                link: hud_sprite
             bar_index:
                 desc: The indexed position of the bar on the sprite to use. Please note that indexes start at 0.
-                type: integer
-                min: 0
+                link: hud_bar_index
             icon_index:
                 desc: The indexed position of the icon on the sprite to use. Please note that indexes start at 0.
-                type: integer
-                min: 0
+                link: hud_icon_index
             condition:
                 desc: If set (and should_render is true), the bar will only display when the entity with the power fulfills this condition.
                 link: entity_cond
