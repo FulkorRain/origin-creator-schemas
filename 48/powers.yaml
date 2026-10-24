@@ -240,8 +240,7 @@ links:
                             attribute:
                                 desc: ID of the attribute of which the value should be checked.
                                 href: https://minecraft.wiki/w/Attribute
-                                type: string
-                                allow: '*a-z0-9_#\/:.-'
+                                link: attribute_id
                             comparison:
                                 desc: How the attribute's value should be compared to the specified value.
                                 link: comparison
@@ -692,8 +691,7 @@ links:
                         string-origins:status_effect:
                             effect:
                                 desc: ID of the status effect the player should have.
-                                type: string
-                                allow: '*a-z0-9_#\/:.-'
+                                link: effect_id
                             min_amplifier:
                                 desc: The minimum amplifier the status effect should have in order to pass the check. Defaults to 0.
                                 type: integer
@@ -1310,6 +1308,100 @@ links:
           - minecraft:sulfur_cube_with_block_immune_to
           - minecraft:witch_resistant_to
           - minecraft:wither_immune_to
+    attribute_id:
+        type: string
+        allow: '*a-z0-9_#\/:.-'
+        helper: &attribute_helper
+            title: Attributes
+            list: attribute_values
+    attribute_values:
+        enum:
+          - $Generic
+          - minecraft:generic.armor
+          - minecraft:generic.armor_toughness
+          - minecraft:generic.attack_damage
+          - minecraft:generic.attack_knockback
+          - minecraft:generic.attack_speed
+          - minecraft:generic.burning_time
+          - minecraft:generic.explosion_knockback_resistance
+          - minecraft:generic.fall_damage_multiplier
+          - minecraft:generic.flying_speed
+          - minecraft:generic.follow_range
+          - minecraft:generic.gravity
+          - minecraft:generic.jump_strength
+          - minecraft:generic.knockback_resistance
+          - minecraft:generic.luck
+          - minecraft:generic.max_absorption
+          - minecraft:generic.max_health
+          - minecraft:generic.movement_efficiency
+          - minecraft:generic.movement_speed
+          - minecraft:generic.oxygen_bonus
+          - minecraft:generic.safe_fall_distance
+          - minecraft:generic.scale
+          - minecraft:generic.step_height
+          - minecraft:generic.water_movement_efficiency
+          - $Player
+          - minecraft:player.block_break_speed
+          - minecraft:player.block_interaction_range
+          - minecraft:player.entity_interaction_range
+          - minecraft:player.mining_efficiency
+          - minecraft:player.sneaking_speed
+          - minecraft:player.submerged_mining_speed
+          - minecraft:player.sweeping_damage_ratio
+          - $Zombie
+          - minecraft:zombie.spawn_reinforcements
+    effect_id:
+        type: string
+        allow: '*a-z0-9_#\/:.-'
+        helper: &effect_helper
+            title: Status effects
+            list: effect_values
+    effect_values:
+        enum:
+          - minecraft:absorption
+          - minecraft:bad_omen
+          - minecraft:blindness
+          - minecraft:conduit_power
+          - minecraft:darkness
+          - minecraft:dolphins_grace
+          - minecraft:fire_resistance
+          - minecraft:glowing
+          - minecraft:haste
+          - minecraft:health_boost
+          - minecraft:hero_of_the_village
+          - minecraft:hunger
+          - minecraft:infested
+          - minecraft:instant_damage
+          - minecraft:instant_health
+          - minecraft:invisibility
+          - minecraft:jump_boost
+          - minecraft:levitation
+          - minecraft:luck
+          - minecraft:mining_fatigue
+          - minecraft:nausea
+          - minecraft:night_vision
+          - minecraft:oozing
+          - minecraft:poison
+          - minecraft:raid_omen
+          - minecraft:regeneration
+          - minecraft:resistance
+          - minecraft:saturation
+          - minecraft:slow_falling
+          - minecraft:slowness
+          - minecraft:speed
+          - minecraft:strength
+          - minecraft:trial_omen
+          - minecraft:unluck
+          - minecraft:water_breathing
+          - minecraft:weakness
+          - minecraft:weaving
+          - minecraft:wind_charged
+          - minecraft:wither
+    effect_id_list:
+        type: list
+        vals:
+            link: effect_id
+        helper: *effect_helper
     damage_cond:
         unspec: none
         or:
@@ -1788,8 +1880,7 @@ links:
                         string-origins:clear_effect:
                             effect:
                                 desc: If specified, the effect with this ID will be cleared. If not specified, all effects will be cleared.
-                                type: string
-                                allow: '*a-z0-9_#\/:.-'
+                                link: effect_id
                         string-origins:crafting_table: {}
                         string-origins:damage:
                             amount:
@@ -2906,7 +2997,7 @@ links:
                         attribute:
                             desc: The namespace and ID of the attribute to transfer the value from.
                             href: https://minecraft.wiki/w/Attribute
-                            type: string
+                            link: attribute_id
                         class:
                             desc: The path and ID of the class to transfer the value of an attribute to.
                             type: string
@@ -3068,14 +3159,10 @@ links:
                             type: boolean
                         effect:
                             desc: If specified, the effect with this ID can not be applied to the player.
-                            type: string
-                            allow: '*a-z0-9_#\/:.-'
+                            link: effect_id
                         effects:
                             desc: If specified, the effects with these IDs can not be applied to the player.
-                            type: list
-                            vals:
-                                type: string
-                                allow: '*a-z0-9_#\/:.-'
+                            link: effect_id_list
                     string-origins:elytra_flight:
                         render_elytra:
                             desc: Whether an Elytra should render on the player's back while this power is active.
@@ -4091,8 +4178,7 @@ links:
                         attribute:
                             desc: ID of the attribute of which the modifier should be applied.
                             href: https://minecraft.wiki/w/Attribute
-                            type: string
-                            allow: '*a-z0-9_#\/:.-'
+                            link: attribute_id
                         modifier:
                             desc: If specified, this modifier will be applied to the entity's attribute.
                             link: a_mod
@@ -4427,28 +4513,20 @@ links:
                     string-origins:modify_status_effect_amplifier:
                         status_effect:
                             desc: If specified, the namespace and ID of the status effect that will have its amplifier modified.
-                            type: string
-                            allow: '*a-z0-9_#\/:.-'
+                            link: effect_id
                         status_effects:
                             desc: If specified, the namespace and ID of the status effects that will have their amplifiers modified.
-                            type: list
-                            vals:
-                                type: string
-                                allow: '*a-z0-9_#\/:.-'
+                            link: effect_id_list
                         modifier:
                             desc: The modifier to apply to the amplifier of the specified status effect.
                             link: a_mod
                     string-origins:modify_status_effect_duration:
                         status_effect:
                             desc: If specified, the namespace and ID of the status effect that will have its duration modified.
-                            type: string
-                            allow: '*a-z0-9_#\/:.-'
+                            link: effect_id
                         status_effects:
                             desc: If specified, the namespace and ID of the status effects that will have their durations modified.
-                            type: list
-                            vals:
-                                type: string
-                                allow: '*a-z0-9_#\/:.-'
+                            link: effect_id_list
                         modifier:
                             desc: The modifier to apply to the duration of the specified status effect.
                             link: a_mod
@@ -4852,8 +4930,7 @@ links:
             attribute:
                 desc: ID of the attribute which will be modified by this modifier.
                 href: https://minecraft.wiki/w/Attribute
-                type: string
-                allow: '*a-z0-9_#\/:.-'
+                link: attribute_id
             operation:
                 link: aa_mod_op
             amount:
@@ -4998,8 +5075,7 @@ links:
         props:
             id:
                 desc: ID of the status effect
-                type: string
-                allow: '*a-z0-9_#\/:.-'
+                link: effect_id
             duration:
                 desc: Duration of the status effect in ticks.
                 type: integer
