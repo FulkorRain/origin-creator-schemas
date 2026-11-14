@@ -1113,6 +1113,7 @@ links:
         type: string
         allow: '*a-z0-9_#\/:.-'
         helper: &attribute_helper
+            key: attributes
             title: Attributes
             list: attribute_values
     attribute_values:
@@ -1155,6 +1156,7 @@ links:
         type: string
         allow: '*a-z0-9_#\/:.-'
         helper: &effect_helper
+            key: effects
             title: Status effects
             list: effect_values
     effect_values:

@@ -1205,6 +1205,7 @@ links:
         type: string
         allow: '*a-z0-9_#\/:.-'
         helper:
+            key: damage_types
             title: Damage types
             list: damage_type_values
             folder: damage_type
@@ -1267,6 +1268,7 @@ links:
         type: string
         allow: '*a-z0-9_#\/:.-'
         helper:
+            key: damage_tags
             title: Damage tags
             list: damage_type_tag_values
             folder: tags/damage_type
@@ -1312,6 +1314,7 @@ links:
         type: string
         allow: '*a-z0-9_#\/:.-'
         helper: &attribute_helper
+            key: attributes
             title: Attributes
             list: attribute_values
     attribute_values:
@@ -1354,6 +1357,7 @@ links:
         type: string
         allow: '*a-z0-9_#\/:.-'
         helper: &effect_helper
+            key: effects
             title: Status effects
             list: effect_values
     effect_values:
