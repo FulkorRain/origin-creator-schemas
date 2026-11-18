@@ -4,6 +4,25 @@ links:
         href: https://minecraft.wiki/w/Java_Edition_data_values#Blocks
         type: string
         allow: '*a-z0-9_:-'
+        helper:
+            key: items
+            title: Items
+            id: recipes
+            list: item_values
+    item_values:
+        enum:
+          - $Food
+          - minecraft:beef
+          - minecraft:cooked_beef
+          - $Combat
+          - minecraft:golden_sword
+          - minecraft:diamond_sword
+          - $Tools
+          - minecraft:golden_pickaxe
+          - minecraft:diamond_pickaxe
+          - $Armor
+          - minecraft:golden_helmet
+          - minecraft:golden_chestplate
     oritem:
         desc: A list or single item used as an ingredient for this recipe.
         type: or
