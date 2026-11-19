@@ -10,6 +10,7 @@ links:
             id: recipes
             list: item_values
             multi: ingredient
+            tabs: true
     item_values:
         enum:
           - $Food
