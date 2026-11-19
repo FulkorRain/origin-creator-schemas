@@ -9,6 +9,7 @@ links:
             title: Items
             id: recipes
             list: item_values
+            multi: ingredient
     oritem:
         desc: A list or single item used as an ingredient for this recipe.
         type: or

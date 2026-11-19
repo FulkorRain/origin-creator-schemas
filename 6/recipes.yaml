@@ -9,6 +9,7 @@ links:
             title: Items
             id: recipes
             list: item_values
+            multi: ingredient
     item_values:
         enum:
           - $Food
