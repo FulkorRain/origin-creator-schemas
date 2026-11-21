@@ -1081,6 +1081,10 @@ links:
                                 desc: The command to execute (from the perspective of the entity!).
                                 type: string
                                 ext: true
+                                helper: &command_helper
+                                    key: commands
+                                    title: Commands
+                                    tabs: true
                             permission_level:
                                 desc: The permission level to use for the command. 0 is a "survival player", anything higher emulates some form of operator. Click to see the Minecraft Wiki (op-permission-level) for details.
                                 href: https://minecraft.wiki/w/Permission_level
@@ -1321,6 +1325,7 @@ links:
                                 desc: The command to execute.
                                 type: string
                                 ext: true
+                                helper: *command_helper
                             permission_level:
                                 desc: The permission level to use for the command. 0 is a "survival player", anything higher emulates some form of operator. Click to see tje Minecraft Wiki (op-permission-level) for details.
                                 href: https://minecraft.wiki/w/Permission_level

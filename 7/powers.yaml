@@ -1357,6 +1357,10 @@ links:
                                 desc: The command to execute (from the perspective of the entity!).
                                 type: string
                                 ext: true
+                                helper: &command_helper
+                                    key: commands
+                                    title: Commands
+                                    tabs: true
                         string-origins:exhaust:
                             amount:
                                 desc: The amount of exhaustion to apply to the player.
@@ -1699,6 +1703,7 @@ links:
                                 desc: The command to execute.
                                 type: string
                                 ext: true
+                                helper: *command_helper
                         string-origins:offset:
                             action:
                                 desc: The action to apply with the given offset.
